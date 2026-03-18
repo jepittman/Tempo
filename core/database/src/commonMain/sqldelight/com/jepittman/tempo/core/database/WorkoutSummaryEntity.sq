@@ -1,0 +1,20 @@
+CREATE TABLE WorkoutSummaryEntity (
+    workout_id TEXT NOT NULL PRIMARY KEY,
+    type TEXT AS com.jepittman.tempo.core.domain.model.WorkoutType NOT NULL,
+    title TEXT,
+    started_at INTEGER AS kotlinx.datetime.Instant NOT NULL,
+    duration_seconds INTEGER NOT NULL,
+    average_heart_rate_bpm INTEGER,
+    max_heart_rate_bpm INTEGER,
+    total_sets INTEGER,
+    total_volume_kg REAL
+);
+
+upsert:
+INSERT OR REPLACE INTO WorkoutSummaryEntity (
+    workout_id, type, title, started_at, duration_seconds,
+    average_heart_rate_bpm, max_heart_rate_bpm, total_sets, total_volume_kg
+) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+selectAll:
+SELECT * FROM WorkoutSummaryEntity ORDER BY started_at DESC;

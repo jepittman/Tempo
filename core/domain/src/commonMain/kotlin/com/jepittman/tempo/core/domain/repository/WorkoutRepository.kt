@@ -10,5 +10,6 @@ interface WorkoutRepository {
     suspend fun getWorkout(id: String): Workout?
     suspend fun createWorkout(type: WorkoutType, title: String? = null): Workout
     suspend fun saveWorkout(workout: Workout): Workout
+    suspend fun saveSummary(summary: WorkoutSummary)
     suspend fun deleteWorkout(id: String)
 }

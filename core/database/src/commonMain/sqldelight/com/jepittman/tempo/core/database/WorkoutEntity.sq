@@ -1,0 +1,21 @@
+CREATE TABLE WorkoutEntity (
+    id TEXT NOT NULL PRIMARY KEY,
+    type TEXT AS com.jepittman.tempo.core.domain.model.WorkoutType NOT NULL,
+    title TEXT,
+    started_at INTEGER AS kotlinx.datetime.Instant NOT NULL,
+    ended_at INTEGER AS kotlinx.datetime.Instant,
+    notes TEXT
+);
+
+insert:
+INSERT OR REPLACE INTO WorkoutEntity (id, type, title, started_at, ended_at, notes)
+VALUES (?, ?, ?, ?, ?, ?);
+
+selectById:
+SELECT * FROM WorkoutEntity WHERE id = ?;
+
+selectAll:
+SELECT * FROM WorkoutEntity;
+
+deleteById:
+DELETE FROM WorkoutEntity WHERE id = ?;

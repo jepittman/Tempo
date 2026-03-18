@@ -2,6 +2,7 @@ rootProject.name = "tempo"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
+    includeBuild("tooling")
     repositories {
         google {
             mavenContent {

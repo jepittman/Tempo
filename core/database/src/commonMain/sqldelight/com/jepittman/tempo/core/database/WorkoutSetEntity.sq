@@ -1,0 +1,18 @@
+CREATE TABLE WorkoutSetEntity (
+    id TEXT NOT NULL PRIMARY KEY,
+    workout_id TEXT NOT NULL,
+    exercise_name TEXT NOT NULL,
+    set_number INTEGER NOT NULL,
+    reps INTEGER,
+    weight_kg REAL,
+    duration_seconds INTEGER,
+    completed_at INTEGER AS kotlinx.datetime.Instant NOT NULL
+);
+
+insert:
+INSERT OR REPLACE INTO WorkoutSetEntity (
+    id, workout_id, exercise_name, set_number, reps, weight_kg, duration_seconds, completed_at
+) VALUES (?, ?, ?, ?, ?, ?, ?, ?);
+
+selectByWorkoutId:
+SELECT * FROM WorkoutSetEntity WHERE workout_id = ? ORDER BY set_number ASC;

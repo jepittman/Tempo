@@ -1,0 +1,13 @@
+CREATE TABLE HeartRateSampleEntity (
+    workout_id TEXT NOT NULL,
+    bpm INTEGER NOT NULL,
+    recorded_at INTEGER AS kotlinx.datetime.Instant NOT NULL,
+    source TEXT AS com.jepittman.tempo.core.domain.model.DataSource NOT NULL
+);
+
+insert:
+INSERT INTO HeartRateSampleEntity (workout_id, bpm, recorded_at, source)
+VALUES (?, ?, ?, ?);
+
+selectByWorkoutId:
+SELECT * FROM HeartRateSampleEntity WHERE workout_id = ?;
