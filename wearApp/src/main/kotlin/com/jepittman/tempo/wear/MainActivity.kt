@@ -10,7 +10,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MaterialTheme {
-                // TODO: WearApp()
+                // WearApp entry point — wired up once feature:workout is ready
             }
         }
     }

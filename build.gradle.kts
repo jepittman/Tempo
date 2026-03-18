@@ -11,4 +11,21 @@ plugins {
     alias(libs.plugins.kotlinSerialization) apply false
     alias(libs.plugins.ktor) apply false
     alias(libs.plugins.sqldelight) apply false
+    alias(libs.plugins.detekt) apply false
+}
+
+val detektFormattingDep = libs.detekt.formatting
+
+subprojects {
+    apply(plugin = "io.gitlab.arturbosch.detekt")
+
+    dependencies {
+        "detektPlugins"(detektFormattingDep)
+    }
+
+    extensions.configure<io.gitlab.arturbosch.detekt.extensions.DetektExtension> {
+        config.setFrom(rootProject.files("config/detekt/detekt.yml"))
+        buildUponDefaultConfig = true
+        autoCorrect = true
+    }
 }
