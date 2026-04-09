@@ -1,19 +1,45 @@
-*.iml
-.kotlin
-.gradle
+# ─── Gradle ───────────────────────────────────────────────────────────────────
+.gradle/
 **/build/
-xcuserdata
 !src/**/build/
+gradle.properties.local
+
+# ─── Android ──────────────────────────────────────────────────────────────────
 local.properties
-.idea
-.DS_Store
-captures
-.externalNativeBuild
-.cxx
+*.apk
+*.aab
+*.ap_
+captures/
+.externalNativeBuild/
+.cxx/
+
+# ─── Kotlin / KMP ─────────────────────────────────────────────────────────────
+*.iml
+.kotlin/
+
+# ─── Xcode / iOS ──────────────────────────────────────────────────────────────
+xcuserdata/
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
 !*.xcodeproj/project.xcworkspace/
 !*.xcworkspace/contents.xcworkspacedata
 **/xcshareddata/WorkspaceSettings.xcsettings
+DerivedData/
+*.hmap
+
+# ─── IntelliJ / Android Studio ────────────────────────────────────────────────
+.idea/
+
+# ─── macOS ────────────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ─── Claude Code ──────────────────────────────────────────────────────────────
+.claude/
+CLAUDE.md
+
+# ─── Node ─────────────────────────────────────────────────────────────────────
 node_modules/
