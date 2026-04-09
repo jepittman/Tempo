@@ -5,7 +5,7 @@ import com.jepittman.tempo.core.domain.model.DataSource
 import com.jepittman.tempo.core.domain.model.HeartRateSample
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
-import kotlinx.datetime.Clock
+import kotlin.time.Clock
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

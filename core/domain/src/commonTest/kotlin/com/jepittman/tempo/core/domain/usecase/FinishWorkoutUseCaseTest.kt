@@ -7,7 +7,7 @@ import com.jepittman.tempo.core.domain.model.DataSource
 import com.jepittman.tempo.core.domain.model.HeartRateSample
 import com.jepittman.tempo.core.domain.model.WorkoutStatus
 import kotlinx.coroutines.test.runTest
-import kotlinx.datetime.Clock
+import kotlin.time.Clock
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith

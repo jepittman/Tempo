@@ -3,7 +3,7 @@ package com.jepittman.tempo.core.database
 import app.cash.sqldelight.ColumnAdapter
 import com.jepittman.tempo.core.domain.model.DataSource
 import com.jepittman.tempo.core.domain.model.WorkoutType
-import kotlinx.datetime.Instant
+import kotlin.time.Instant
 
 internal object InstantAdapter : ColumnAdapter<Instant, Long> {
     override fun decode(databaseValue: Long): Instant = Instant.fromEpochMilliseconds(databaseValue)

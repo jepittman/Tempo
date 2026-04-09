@@ -18,9 +18,12 @@ material3 = "1.10.0-alpha05"
 kotlinx-coroutines = "1.9.0"
 kotlinx-coroutines-test = "1.9.0"
 kotlinx-serialization = "1.7.3"
-kotlinx-datetime = "0.6.1"
+kotlinx-datetime = "0.7.1"
 sqldelight = "2.0.2"
 detekt = "1.23.8"
+dependency-guard = "0.5.0"
+kover = "0.9.6"
+binary-compatibility-validator = "0.17.0"
 wear-compose = "1.4.0"
 health-services = "1.1.0-rc01"
 play-services-wearable = "18.2.0"
@@ -72,6 +75,9 @@ detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", 
 detekt-gradlePlugin = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
 # Gradle plugin classpath entries (used by tooling convention plugins)
 agp-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
+dependencyGuard-gradlePlugin = { module = "com.dropbox.dependency-guard:dependency-guard", version.ref = "dependency-guard" }
+kover-gradlePlugin = { module = "org.jetbrains.kotlinx:kover-gradle-plugin", version.ref = "kover" }
+binaryCompatibilityValidator-gradlePlugin = { module = "org.jetbrains.kotlinx:binary-compatibility-validator", version.ref = "binary-compatibility-validator" }
 kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 compose-gradlePlugin = { module = "org.jetbrains.compose:compose-gradle-plugin", version.ref = "composeMultiplatform" }
 composeCompiler-gradlePlugin = { module = "org.jetbrains.kotlin:compose-compiler-gradle-plugin", version.ref = "kotlin" }
@@ -95,3 +101,6 @@ ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 sqldelight = { id = "app.cash.sqldelight", version.ref = "sqldelight" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+dependencyGuard = { id = "com.dropbox.dependency-guard", version.ref = "dependency-guard" }
+kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
+binaryCompatibilityValidator = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version.ref = "binary-compatibility-validator" }

@@ -9,6 +9,9 @@ dependencies {
     implementation(libs.compose.gradlePlugin)
     implementation(libs.composeCompiler.gradlePlugin)
     implementation(libs.detekt.gradlePlugin)
+    implementation(libs.dependencyGuard.gradlePlugin)
+    implementation(libs.kover.gradlePlugin)
+    implementation(libs.binaryCompatibilityValidator.gradlePlugin)
 
     // Workaround for https://github.com/gradle/gradle/issues/15383 —
     // makes the version catalog type-safe accessors (LibrariesForLibs) available

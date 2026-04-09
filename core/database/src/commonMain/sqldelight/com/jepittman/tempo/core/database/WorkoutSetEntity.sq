@@ -6,7 +6,7 @@ CREATE TABLE WorkoutSetEntity (
     reps INTEGER,
     weight_kg REAL,
     duration_seconds INTEGER,
-    completed_at INTEGER AS kotlinx.datetime.Instant NOT NULL
+    completed_at INTEGER AS kotlin.time.Instant NOT NULL
 );
 
 insert:

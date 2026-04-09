@@ -6,7 +6,7 @@ import com.jepittman.tempo.core.domain.model.WorkoutSummary
 import com.jepittman.tempo.core.domain.repository.HeartRateRepository
 import com.jepittman.tempo.core.domain.repository.WorkoutRepository
 import kotlinx.coroutines.flow.first
-import kotlinx.datetime.Clock
+import kotlin.time.Clock
 
 class FinishWorkoutUseCase(
     private val workoutRepository: WorkoutRepository,

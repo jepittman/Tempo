@@ -5,7 +5,7 @@ import com.jepittman.tempo.core.domain.model.Workout
 import com.jepittman.tempo.core.domain.model.WorkoutSet
 import com.jepittman.tempo.core.domain.model.WorkoutStatus
 import com.jepittman.tempo.core.domain.model.WorkoutType
-import kotlinx.datetime.Instant
+import kotlin.time.Instant
 
 fun buildWorkout(
     id: String = "workout-1",

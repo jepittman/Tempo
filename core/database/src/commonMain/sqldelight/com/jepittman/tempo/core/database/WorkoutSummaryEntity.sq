@@ -2,7 +2,7 @@ CREATE TABLE WorkoutSummaryEntity (
     workout_id TEXT NOT NULL PRIMARY KEY,
     type TEXT AS com.jepittman.tempo.core.domain.model.WorkoutType NOT NULL,
     title TEXT,
-    started_at INTEGER AS kotlinx.datetime.Instant NOT NULL,
+    started_at INTEGER AS kotlin.time.Instant NOT NULL,
     duration_seconds INTEGER NOT NULL,
     average_heart_rate_bpm INTEGER,
     max_heart_rate_bpm INTEGER,

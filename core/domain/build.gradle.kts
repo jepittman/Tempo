@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidKmpLibrary)
+    id("tempo.dependency-guard")
+    id("tempo.kover")
+    id("tempo.api-check")
 }
 
 kotlin {

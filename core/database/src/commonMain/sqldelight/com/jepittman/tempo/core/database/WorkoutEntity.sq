@@ -2,8 +2,8 @@ CREATE TABLE WorkoutEntity (
     id TEXT NOT NULL PRIMARY KEY,
     type TEXT AS com.jepittman.tempo.core.domain.model.WorkoutType NOT NULL,
     title TEXT,
-    started_at INTEGER AS kotlinx.datetime.Instant NOT NULL,
-    ended_at INTEGER AS kotlinx.datetime.Instant,
+    started_at INTEGER AS kotlin.time.Instant NOT NULL,
+    ended_at INTEGER AS kotlin.time.Instant,
     notes TEXT
 );
 

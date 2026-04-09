@@ -3,6 +3,11 @@ plugins {
     alias(libs.plugins.androidKmpLibrary)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    id("tempo.dependency-guard")
+    id("tempo.api-check")
+    // tempo.kover is intentionally omitted: feature:workout has no JVM target,
+    // so Kover cannot instrument it. Coverage is measured through integration tests
+    // in the app module once it exercises this feature's use cases.
 }
 
 kotlin {
@@ -27,6 +32,7 @@ kotlin {
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
             implementation(libs.kotlinx.coroutines.core)
+            implementation(libs.kotlinx.datetime)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

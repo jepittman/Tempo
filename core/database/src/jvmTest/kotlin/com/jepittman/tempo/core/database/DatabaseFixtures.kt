@@ -2,8 +2,8 @@ package com.jepittman.tempo.core.database
 
 import com.jepittman.tempo.core.domain.model.WorkoutSummary
 import com.jepittman.tempo.core.domain.model.WorkoutType
-import kotlinx.datetime.Clock
-import kotlinx.datetime.Instant
+import kotlin.time.Clock
+import kotlin.time.Instant
 
 internal fun buildSummary(
     workoutId: String = "workout-1",

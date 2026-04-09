@@ -1,6 +1,6 @@
 package com.jepittman.tempo.core.domain.model
 
-import kotlinx.datetime.Instant
+import kotlin.time.Instant
 
 data class WorkoutSet(
     val id: String,

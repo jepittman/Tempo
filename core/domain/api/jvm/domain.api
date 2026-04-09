@@ -1,0 +1,205 @@
+public final class com/jepittman/tempo/core/domain/model/ActiveWorkout {
+	public fun <init> (Lcom/jepittman/tempo/core/domain/model/Workout;Lcom/jepittman/tempo/core/domain/model/WorkoutStatus;JLjava/lang/Integer;Ljava/util/List;)V
+	public final fun component1 ()Lcom/jepittman/tempo/core/domain/model/Workout;
+	public final fun component2 ()Lcom/jepittman/tempo/core/domain/model/WorkoutStatus;
+	public final fun component3 ()J
+	public final fun component4 ()Ljava/lang/Integer;
+	public final fun component5 ()Ljava/util/List;
+	public final fun copy (Lcom/jepittman/tempo/core/domain/model/Workout;Lcom/jepittman/tempo/core/domain/model/WorkoutStatus;JLjava/lang/Integer;Ljava/util/List;)Lcom/jepittman/tempo/core/domain/model/ActiveWorkout;
+	public static synthetic fun copy$default (Lcom/jepittman/tempo/core/domain/model/ActiveWorkout;Lcom/jepittman/tempo/core/domain/model/Workout;Lcom/jepittman/tempo/core/domain/model/WorkoutStatus;JLjava/lang/Integer;Ljava/util/List;ILjava/lang/Object;)Lcom/jepittman/tempo/core/domain/model/ActiveWorkout;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCurrentHeartRateBpm ()Ljava/lang/Integer;
+	public final fun getElapsedSeconds ()J
+	public final fun getSets ()Ljava/util/List;
+	public final fun getStatus ()Lcom/jepittman/tempo/core/domain/model/WorkoutStatus;
+	public final fun getWorkout ()Lcom/jepittman/tempo/core/domain/model/Workout;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/jepittman/tempo/core/domain/model/DataSource : java/lang/Enum {
+	public static final field Manual Lcom/jepittman/tempo/core/domain/model/DataSource;
+	public static final field WatchOs Lcom/jepittman/tempo/core/domain/model/DataSource;
+	public static final field WearOs Lcom/jepittman/tempo/core/domain/model/DataSource;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lcom/jepittman/tempo/core/domain/model/DataSource;
+	public static fun values ()[Lcom/jepittman/tempo/core/domain/model/DataSource;
+}
+
+public final class com/jepittman/tempo/core/domain/model/HeartRateSample {
+	public fun <init> (Ljava/lang/String;ILkotlin/time/Instant;Lcom/jepittman/tempo/core/domain/model/DataSource;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()I
+	public final fun component3 ()Lkotlin/time/Instant;
+	public final fun component4 ()Lcom/jepittman/tempo/core/domain/model/DataSource;
+	public final fun copy (Ljava/lang/String;ILkotlin/time/Instant;Lcom/jepittman/tempo/core/domain/model/DataSource;)Lcom/jepittman/tempo/core/domain/model/HeartRateSample;
+	public static synthetic fun copy$default (Lcom/jepittman/tempo/core/domain/model/HeartRateSample;Ljava/lang/String;ILkotlin/time/Instant;Lcom/jepittman/tempo/core/domain/model/DataSource;ILjava/lang/Object;)Lcom/jepittman/tempo/core/domain/model/HeartRateSample;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBpm ()I
+	public final fun getRecordedAt ()Lkotlin/time/Instant;
+	public final fun getSource ()Lcom/jepittman/tempo/core/domain/model/DataSource;
+	public final fun getWorkoutId ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/jepittman/tempo/core/domain/model/Workout {
+	public fun <init> (Ljava/lang/String;Lcom/jepittman/tempo/core/domain/model/WorkoutType;Ljava/lang/String;Lkotlin/time/Instant;Lkotlin/time/Instant;Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Lcom/jepittman/tempo/core/domain/model/WorkoutType;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Lkotlin/time/Instant;
+	public final fun component5 ()Lkotlin/time/Instant;
+	public final fun component6 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Lcom/jepittman/tempo/core/domain/model/WorkoutType;Ljava/lang/String;Lkotlin/time/Instant;Lkotlin/time/Instant;Ljava/lang/String;)Lcom/jepittman/tempo/core/domain/model/Workout;
+	public static synthetic fun copy$default (Lcom/jepittman/tempo/core/domain/model/Workout;Ljava/lang/String;Lcom/jepittman/tempo/core/domain/model/WorkoutType;Ljava/lang/String;Lkotlin/time/Instant;Lkotlin/time/Instant;Ljava/lang/String;ILjava/lang/Object;)Lcom/jepittman/tempo/core/domain/model/Workout;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getEndedAt ()Lkotlin/time/Instant;
+	public final fun getId ()Ljava/lang/String;
+	public final fun getNotes ()Ljava/lang/String;
+	public final fun getStartedAt ()Lkotlin/time/Instant;
+	public final fun getTitle ()Ljava/lang/String;
+	public final fun getType ()Lcom/jepittman/tempo/core/domain/model/WorkoutType;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/jepittman/tempo/core/domain/model/WorkoutSet {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Integer;Ljava/lang/Double;Ljava/lang/Long;Lkotlin/time/Instant;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()I
+	public final fun component5 ()Ljava/lang/Integer;
+	public final fun component6 ()Ljava/lang/Double;
+	public final fun component7 ()Ljava/lang/Long;
+	public final fun component8 ()Lkotlin/time/Instant;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Integer;Ljava/lang/Double;Ljava/lang/Long;Lkotlin/time/Instant;)Lcom/jepittman/tempo/core/domain/model/WorkoutSet;
+	public static synthetic fun copy$default (Lcom/jepittman/tempo/core/domain/model/WorkoutSet;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Integer;Ljava/lang/Double;Ljava/lang/Long;Lkotlin/time/Instant;ILjava/lang/Object;)Lcom/jepittman/tempo/core/domain/model/WorkoutSet;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCompletedAt ()Lkotlin/time/Instant;
+	public final fun getDurationSeconds ()Ljava/lang/Long;
+	public final fun getExerciseName ()Ljava/lang/String;
+	public final fun getId ()Ljava/lang/String;
+	public final fun getReps ()Ljava/lang/Integer;
+	public final fun getSetNumber ()I
+	public final fun getWeightKg ()Ljava/lang/Double;
+	public final fun getWorkoutId ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/jepittman/tempo/core/domain/model/WorkoutStatus : java/lang/Enum {
+	public static final field Active Lcom/jepittman/tempo/core/domain/model/WorkoutStatus;
+	public static final field Completed Lcom/jepittman/tempo/core/domain/model/WorkoutStatus;
+	public static final field Discarded Lcom/jepittman/tempo/core/domain/model/WorkoutStatus;
+	public static final field Paused Lcom/jepittman/tempo/core/domain/model/WorkoutStatus;
+	public static final field Preparing Lcom/jepittman/tempo/core/domain/model/WorkoutStatus;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lcom/jepittman/tempo/core/domain/model/WorkoutStatus;
+	public static fun values ()[Lcom/jepittman/tempo/core/domain/model/WorkoutStatus;
+}
+
+public final class com/jepittman/tempo/core/domain/model/WorkoutSummary {
+	public fun <init> (Ljava/lang/String;Lcom/jepittman/tempo/core/domain/model/WorkoutType;Ljava/lang/String;Lkotlin/time/Instant;JLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Double;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Lcom/jepittman/tempo/core/domain/model/WorkoutType;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Lkotlin/time/Instant;
+	public final fun component5 ()J
+	public final fun component6 ()Ljava/lang/Integer;
+	public final fun component7 ()Ljava/lang/Integer;
+	public final fun component8 ()Ljava/lang/Integer;
+	public final fun component9 ()Ljava/lang/Double;
+	public final fun copy (Ljava/lang/String;Lcom/jepittman/tempo/core/domain/model/WorkoutType;Ljava/lang/String;Lkotlin/time/Instant;JLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Double;)Lcom/jepittman/tempo/core/domain/model/WorkoutSummary;
+	public static synthetic fun copy$default (Lcom/jepittman/tempo/core/domain/model/WorkoutSummary;Ljava/lang/String;Lcom/jepittman/tempo/core/domain/model/WorkoutType;Ljava/lang/String;Lkotlin/time/Instant;JLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Double;ILjava/lang/Object;)Lcom/jepittman/tempo/core/domain/model/WorkoutSummary;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAverageHeartRateBpm ()Ljava/lang/Integer;
+	public final fun getDurationSeconds ()J
+	public final fun getMaxHeartRateBpm ()Ljava/lang/Integer;
+	public final fun getStartedAt ()Lkotlin/time/Instant;
+	public final fun getTitle ()Ljava/lang/String;
+	public final fun getTotalSets ()Ljava/lang/Integer;
+	public final fun getTotalVolumeKg ()Ljava/lang/Double;
+	public final fun getType ()Lcom/jepittman/tempo/core/domain/model/WorkoutType;
+	public final fun getWorkoutId ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/jepittman/tempo/core/domain/model/WorkoutType : java/lang/Enum {
+	public static final field Cycling Lcom/jepittman/tempo/core/domain/model/WorkoutType;
+	public static final field Hiit Lcom/jepittman/tempo/core/domain/model/WorkoutType;
+	public static final field Other Lcom/jepittman/tempo/core/domain/model/WorkoutType;
+	public static final field Running Lcom/jepittman/tempo/core/domain/model/WorkoutType;
+	public static final field Strength Lcom/jepittman/tempo/core/domain/model/WorkoutType;
+	public static final field Swimming Lcom/jepittman/tempo/core/domain/model/WorkoutType;
+	public static final field Walking Lcom/jepittman/tempo/core/domain/model/WorkoutType;
+	public static final field Yoga Lcom/jepittman/tempo/core/domain/model/WorkoutType;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lcom/jepittman/tempo/core/domain/model/WorkoutType;
+	public static fun values ()[Lcom/jepittman/tempo/core/domain/model/WorkoutType;
+}
+
+public abstract interface class com/jepittman/tempo/core/domain/repository/HeartRateRepository {
+	public abstract fun getSamples (Ljava/lang/String;)Lkotlinx/coroutines/flow/Flow;
+	public abstract fun saveSample (Lcom/jepittman/tempo/core/domain/model/HeartRateSample;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun saveSamples (Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public abstract interface class com/jepittman/tempo/core/domain/repository/WorkoutRepository {
+	public abstract fun createWorkout (Lcom/jepittman/tempo/core/domain/model/WorkoutType;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun createWorkout$default (Lcom/jepittman/tempo/core/domain/repository/WorkoutRepository;Lcom/jepittman/tempo/core/domain/model/WorkoutType;Ljava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public abstract fun deleteWorkout (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getWorkout (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getWorkoutSummaries ()Lkotlinx/coroutines/flow/Flow;
+	public abstract fun saveSummary (Lcom/jepittman/tempo/core/domain/model/WorkoutSummary;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun saveWorkout (Lcom/jepittman/tempo/core/domain/model/Workout;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class com/jepittman/tempo/core/domain/repository/WorkoutRepository$DefaultImpls {
+	public static synthetic fun createWorkout$default (Lcom/jepittman/tempo/core/domain/repository/WorkoutRepository;Lcom/jepittman/tempo/core/domain/model/WorkoutType;Ljava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+}
+
+public abstract interface class com/jepittman/tempo/core/domain/repository/WorkoutSetRepository {
+	public abstract fun deleteSet (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getSets (Ljava/lang/String;)Lkotlinx/coroutines/flow/Flow;
+	public abstract fun saveSet (Lcom/jepittman/tempo/core/domain/model/WorkoutSet;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class com/jepittman/tempo/core/domain/usecase/DiscardWorkoutUseCase {
+	public fun <init> (Lcom/jepittman/tempo/core/domain/repository/WorkoutRepository;)V
+	public final fun invoke (Lcom/jepittman/tempo/core/domain/model/ActiveWorkout;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class com/jepittman/tempo/core/domain/usecase/FinishWorkoutUseCase {
+	public fun <init> (Lcom/jepittman/tempo/core/domain/repository/WorkoutRepository;Lcom/jepittman/tempo/core/domain/repository/HeartRateRepository;)V
+	public final fun invoke (Lcom/jepittman/tempo/core/domain/model/ActiveWorkout;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class com/jepittman/tempo/core/domain/usecase/GetWorkoutHistoryUseCase {
+	public fun <init> (Lcom/jepittman/tempo/core/domain/repository/WorkoutRepository;)V
+	public final fun invoke ()Lkotlinx/coroutines/flow/Flow;
+}
+
+public final class com/jepittman/tempo/core/domain/usecase/LogHeartRateSampleUseCase {
+	public fun <init> (Lcom/jepittman/tempo/core/domain/repository/HeartRateRepository;)V
+	public final fun invoke (Lcom/jepittman/tempo/core/domain/model/HeartRateSample;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class com/jepittman/tempo/core/domain/usecase/PauseWorkoutUseCase {
+	public fun <init> ()V
+	public final fun invoke (Lcom/jepittman/tempo/core/domain/model/ActiveWorkout;)Lcom/jepittman/tempo/core/domain/model/ActiveWorkout;
+}
+
+public final class com/jepittman/tempo/core/domain/usecase/ResumeWorkoutUseCase {
+	public fun <init> ()V
+	public final fun invoke (Lcom/jepittman/tempo/core/domain/model/ActiveWorkout;)Lcom/jepittman/tempo/core/domain/model/ActiveWorkout;
+}
+
+public final class com/jepittman/tempo/core/domain/usecase/StartWorkoutUseCase {
+	public fun <init> (Lcom/jepittman/tempo/core/domain/repository/WorkoutRepository;)V
+	public final fun invoke (Lcom/jepittman/tempo/core/domain/model/WorkoutType;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun invoke$default (Lcom/jepittman/tempo/core/domain/usecase/StartWorkoutUseCase;Lcom/jepittman/tempo/core/domain/model/WorkoutType;Ljava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+}
+
