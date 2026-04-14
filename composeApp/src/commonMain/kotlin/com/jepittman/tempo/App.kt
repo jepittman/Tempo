@@ -1,29 +1,28 @@
 package com.jepittman.tempo
 
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
+import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.jepittman.tempo.feature.workout.WorkoutViewModel
-import com.jepittman.tempo.feature.workout.ui.WorkoutScreen
+import androidx.navigation.compose.rememberNavController
+import com.jepittman.tempo.navigation.AppNavHost
+import com.jepittman.tempo.navigation.AppNavigationBar
 
 @Composable
 fun App(container: AppContainer) {
     MaterialTheme {
-        Surface(modifier = Modifier.fillMaxSize()) {
-            val vm = viewModel {
-                WorkoutViewModel(
-                    startWorkout = container.startWorkout,
-                    pauseWorkout = container.pauseWorkout,
-                    resumeWorkout = container.resumeWorkout,
-                    finishWorkout = container.finishWorkout,
-                    discardWorkout = container.discardWorkout,
-                    logHeartRateSample = container.logHeartRateSample,
-                )
-            }
-            WorkoutScreen(vm)
+        val navController = rememberNavController()
+        Scaffold(
+            modifier = Modifier.fillMaxSize(),
+            bottomBar = { AppNavigationBar(navController) },
+        ) { innerPadding ->
+            AppNavHost(
+                navController = navController,
+                container = container,
+                modifier = Modifier.padding(innerPadding),
+            )
         }
     }
 }

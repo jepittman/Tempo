@@ -5,7 +5,28 @@ import com.jepittman.tempo.core.domain.model.Workout
 import com.jepittman.tempo.core.domain.model.WorkoutSet
 import com.jepittman.tempo.core.domain.model.WorkoutStatus
 import com.jepittman.tempo.core.domain.model.WorkoutType
+import kotlin.time.Clock
 import kotlin.time.Instant
+
+fun buildWorkoutSet(
+    id: String = "set-1",
+    workoutId: String = "workout-1",
+    exerciseName: String = "Bench Press",
+    setNumber: Int = 1,
+    reps: Int? = 10,
+    weightKg: Double? = 80.0,
+    durationSeconds: Long? = null,
+    completedAt: Instant = Clock.System.now(),
+) = WorkoutSet(
+    id = id,
+    workoutId = workoutId,
+    exerciseName = exerciseName,
+    setNumber = setNumber,
+    reps = reps,
+    weightKg = weightKg,
+    durationSeconds = durationSeconds,
+    completedAt = completedAt,
+)
 
 fun buildWorkout(
     id: String = "workout-1",

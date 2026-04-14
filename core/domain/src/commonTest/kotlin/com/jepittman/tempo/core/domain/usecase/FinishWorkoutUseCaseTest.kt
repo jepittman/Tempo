@@ -3,6 +3,7 @@ package com.jepittman.tempo.core.domain.usecase
 import com.jepittman.tempo.core.domain.fake.FakeHeartRateRepository
 import com.jepittman.tempo.core.domain.fake.FakeWorkoutRepository
 import com.jepittman.tempo.core.domain.fixture.buildActiveWorkout
+import com.jepittman.tempo.core.domain.fixture.buildWorkoutSet
 import com.jepittman.tempo.core.domain.model.DataSource
 import com.jepittman.tempo.core.domain.model.HeartRateSample
 import com.jepittman.tempo.core.domain.model.WorkoutStatus
@@ -115,5 +116,68 @@ class FinishWorkoutUseCaseTest {
         assertFailsWith<IllegalArgumentException> {
             useCase(buildActiveWorkout(status = WorkoutStatus.Discarded))
         }
+    }
+
+    @Test
+    fun summaryComputesTotalVolumeFromSetsWithWeightAndReps() = runTest {
+        val active = buildActiveWorkout(
+            sets = listOf(
+                buildWorkoutSet(setNumber = 1, reps = 10, weightKg = 80.0),  // 800 kg
+                buildWorkoutSet(setNumber = 2, reps = 8, weightKg = 85.0),   // 680 kg
+            ),
+        )
+        workoutRepository.saveWorkout(active.workout)
+
+        useCase(active)
+
+        val summary = workoutRepository.savedSummaries.first()
+        assertEquals(1480.0, summary.totalVolumeKg)
+    }
+
+    @Test
+    fun summaryExcludesSetsWithNullWeightFromVolume() = runTest {
+        val active = buildActiveWorkout(
+            sets = listOf(
+                buildWorkoutSet(setNumber = 1, reps = 10, weightKg = null),
+                buildWorkoutSet(setNumber = 2, reps = 8, weightKg = 80.0),  // 640 kg
+            ),
+        )
+        workoutRepository.saveWorkout(active.workout)
+
+        useCase(active)
+
+        val summary = workoutRepository.savedSummaries.first()
+        assertEquals(640.0, summary.totalVolumeKg)
+    }
+
+    @Test
+    fun summaryExcludesSetsWithNullRepsFromVolume() = runTest {
+        val active = buildActiveWorkout(
+            sets = listOf(
+                buildWorkoutSet(setNumber = 1, reps = null, weightKg = 80.0),
+                buildWorkoutSet(setNumber = 2, reps = 10, weightKg = 60.0),  // 600 kg
+            ),
+        )
+        workoutRepository.saveWorkout(active.workout)
+
+        useCase(active)
+
+        val summary = workoutRepository.savedSummaries.first()
+        assertEquals(600.0, summary.totalVolumeKg)
+    }
+
+    @Test
+    fun summaryHasNullVolumeWhenNoSetsHaveWeightAndReps() = runTest {
+        val active = buildActiveWorkout(
+            sets = listOf(
+                buildWorkoutSet(setNumber = 1, reps = null, weightKg = null),
+            ),
+        )
+        workoutRepository.saveWorkout(active.workout)
+
+        useCase(active)
+
+        val summary = workoutRepository.savedSummaries.first()
+        assertEquals(null, summary.totalVolumeKg)
     }
 }

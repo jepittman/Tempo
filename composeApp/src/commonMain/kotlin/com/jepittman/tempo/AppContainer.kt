@@ -7,6 +7,7 @@ import com.jepittman.tempo.core.domain.usecase.FinishWorkoutUseCase
 import com.jepittman.tempo.core.domain.usecase.LogHeartRateSampleUseCase
 import com.jepittman.tempo.core.domain.usecase.PauseWorkoutUseCase
 import com.jepittman.tempo.core.domain.usecase.ResumeWorkoutUseCase
+import com.jepittman.tempo.core.domain.usecase.GetWorkoutHistoryUseCase
 import com.jepittman.tempo.core.domain.usecase.StartWorkoutUseCase
 
 /**
@@ -22,4 +23,5 @@ class AppContainer(driverFactory: DriverFactory) {
     val finishWorkout = FinishWorkoutUseCase(dataModule.workoutRepository, dataModule.heartRateRepository)
     val discardWorkout = DiscardWorkoutUseCase(dataModule.workoutRepository)
     val logHeartRateSample = LogHeartRateSampleUseCase(dataModule.heartRateRepository)
+    val getWorkoutHistory = GetWorkoutHistoryUseCase(dataModule.workoutRepository)
 }
