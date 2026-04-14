@@ -16,3 +16,6 @@ INSERT OR REPLACE INTO WorkoutSetEntity (
 
 selectByWorkoutId:
 SELECT * FROM WorkoutSetEntity WHERE workout_id = ? ORDER BY set_number ASC;
+
+deleteById:
+DELETE FROM WorkoutSetEntity WHERE id = ?;

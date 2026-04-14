@@ -1,0 +1,7 @@
+public final class com/jepittman/tempo/core/data/TempoDataModule {
+	public fun <init> (Lcom/jepittman/tempo/core/database/DriverFactory;)V
+	public final fun getHeartRateRepository ()Lcom/jepittman/tempo/core/domain/repository/HeartRateRepository;
+	public final fun getWorkoutRepository ()Lcom/jepittman/tempo/core/domain/repository/WorkoutRepository;
+	public final fun getWorkoutSetRepository ()Lcom/jepittman/tempo/core/domain/repository/WorkoutSetRepository;
+}
+

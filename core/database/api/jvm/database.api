@@ -61,6 +61,13 @@ public final class com/jepittman/tempo/core/database/SqlDelightWorkoutRepository
 	public fun saveWorkout (Lcom/jepittman/tempo/core/domain/model/Workout;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
+public final class com/jepittman/tempo/core/database/SqlDelightWorkoutSetRepository : com/jepittman/tempo/core/domain/repository/WorkoutSetRepository {
+	public fun <init> (Lcom/jepittman/tempo/core/database/TempoDatabase;)V
+	public fun deleteSet (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun getSets (Ljava/lang/String;)Lkotlinx/coroutines/flow/Flow;
+	public fun saveSet (Lcom/jepittman/tempo/core/domain/model/WorkoutSet;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
 public abstract interface class com/jepittman/tempo/core/database/TempoDatabase : app/cash/sqldelight/Transacter {
 	public static final field Companion Lcom/jepittman/tempo/core/database/TempoDatabase$Companion;
 	public abstract fun getHeartRateSampleEntityQueries ()Lcom/jepittman/tempo/core/database/HeartRateSampleEntityQueries;
@@ -144,6 +151,7 @@ public final class com/jepittman/tempo/core/database/WorkoutSetEntity$Adapter {
 
 public final class com/jepittman/tempo/core/database/WorkoutSetEntityQueries : app/cash/sqldelight/TransacterImpl {
 	public fun <init> (Lapp/cash/sqldelight/db/SqlDriver;Lcom/jepittman/tempo/core/database/WorkoutSetEntity$Adapter;)V
+	public final fun deleteById (Ljava/lang/String;)V
 	public final fun insert (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/lang/Long;Ljava/lang/Double;Ljava/lang/Long;Lkotlin/time/Instant;)V
 	public final fun selectByWorkoutId (Ljava/lang/String;)Lapp/cash/sqldelight/Query;
 	public final fun selectByWorkoutId (Ljava/lang/String;Lkotlin/jvm/functions/Function8;)Lapp/cash/sqldelight/Query;

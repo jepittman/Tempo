@@ -28,6 +28,12 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
+            implementation(projects.core.domain)
+            implementation(projects.core.data)
+            implementation(projects.core.database)
+            implementation(projects.feature.workout)
+            implementation(projects.feature.history)
+            implementation(projects.feature.profile)
             implementation(libs.compose.runtime)
             implementation(libs.compose.foundation)
             implementation(libs.compose.material3)
@@ -36,9 +42,6 @@ kotlin {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
-            implementation(projects.feature.workout)
-            implementation(projects.feature.history)
-            implementation(projects.feature.profile)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
